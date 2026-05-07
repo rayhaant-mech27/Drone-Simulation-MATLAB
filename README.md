@@ -1,4 +1,4 @@
-# 🚁 Autonomous Drone Simulation — MATLAB/Simulink/Stateflow
+# Autonomous Drone Simulation — MATLAB/Simulink/Stateflow
 
 A fully simulated autonomous drone built from scratch using MATLAB, Simulink, Stateflow, and UAV Toolbox — no hardware required.
 
@@ -6,20 +6,40 @@ The drone takes off, follows a mathematically defined line path using a proporti
 
 ---
 
-## 📽️ Demo
+## UAV Animation
 
-> 🎥 **Simulation Video:** [Add your YouTube link here]
+<p align="center">
+  <img src="media/anim1.png" alt="UAV animation 1">
+  <br>
+  <em>at time T=10.0</em>
+</p>
+<br>
 
-<!-- Add your screenshots below after taking them -->
-<!-- ![Simulink Canvas](images/simulink_canvas.png) -->
-<!-- ![Stateflow Chart](images/stateflow_chart.png) -->
-<!-- ![Drone Flying](images/simulation_demo.png) -->
+<p align="center">
+  <img src="media/anim2.png" alt="UAV animation 2">
+  <br>
+  <em>at time T=30.0</em>
+</p>
+<br>
 
 ---
 
-## 🧠 How It Works
+## 3D Simulation with Camera view
+
+<p align="center">
+  <img src="media/3dsim.png" alt="3D Simulator">
+  <br>
+  <em>3D Simulator</em>
+</p>
+<br>
+
+---
+
+## How It Works
 
 The system is a **closed-loop feedback control system** — the drone continuously measures its own position and corrects its behaviour accordingly.
+
+---
 
 ### Data Flow:
 ```
@@ -39,17 +59,31 @@ UAV Animation + 3D Viewer (Visualisation)
       │
       │ Position fed BACK to Stateflow
       └──────────────────────────────────▶ Stateflow
+
 ```
 
-### Flight State Machine:
-```
-  ●
-  │
-  ▼
-┌────────┐  [active_state==1]  ┌──────────┐  [active_state==2]  ┌─────────────┐  [active_state==3]  ┌──────┐
-│  IDLE  │ ──────────────────▶ │ TAKEOFF  │ ──────────────────▶ │ FOLLOW_LINE │ ──────────────────▶ │ LAND │
-└────────┘                     └──────────┘                     └─────────────┘                     └──────┘
-```
+---
+
+### Simulink Canvas:
+<p align="center">
+  <img src="media/canvas.png" alt="Drone Controller">
+  <br>
+  <em>Drone Controller</em>
+</p>
+<br>
+
+---
+
+### StatefLow Chart:
+
+<p align="center">
+  <img src="media/chart.png" alt="Flight State Machine">
+  <br>
+  <em>Flight State Machine</em>
+</p>
+<br>
+
+---
 
 | State | What Drone Does | Exit Condition |
 |---|---|---|
@@ -60,7 +94,7 @@ UAV Animation + 3D Viewer (Visualisation)
 
 ---
 
-## 📐 System Architecture
+## System Architecture
 
 ### Simulink Blocks Used:
 
@@ -87,7 +121,7 @@ A proportional gain (Kp = 5) corrects lateral drift — bigger drift gets bigger
 
 ---
 
-## 🛠️ Tools & Toolboxes
+## Tools & Toolboxes
 
 - **MATLAB R2025**
 - **Simulink**
@@ -99,9 +133,9 @@ A proportional gain (Kp = 5) corrects lateral drift — bigger drift gets bigger
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
-> ⚠️ Requires MATLAB with the toolboxes listed above
+>  Requires MATLAB with the toolboxes listed above
 
 1. Clone or download this repository
 2. Open MATLAB and set your working directory to this folder:
@@ -119,14 +153,14 @@ open('DroneController.slx')
 ```
 5. Press the green **▶ Play** button in Simulink
 
-### You will see:
-- 🌍 **Simulation 3D Viewer** — realistic Unreal Engine world with drone flying
-- 🚁 **UAV Animation** — 3D trajectory plot showing flight path
-- 📷 **Video Viewer** — live downward camera feed from drone
+### Output:
+- **Simulation 3D Viewer** — realistic 3D simulated world with drone flying
+- **UAV Animation** — 3D trajectory plot showing flight path
+- **Video Viewer** — live downward camera feed from drone
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 drone-simulation-matlab/
@@ -146,7 +180,7 @@ drone-simulation-matlab/
 
 ---
 
-## 📚 Key Concepts Demonstrated
+## Concepts Demonstrated
 
 - **Finite State Machine (FSM)** design using Stateflow
 - **Closed-loop feedback control** — position measured and fed back continuously
@@ -158,7 +192,7 @@ drone-simulation-matlab/
 
 ---
 
-## 🗺️ Roadmap / Future Phases
+## Future Phases
 
 - [x] Phase 1 — Simulink environment setup
 - [x] Phase 2 — Stateflow state machine + basic flight
@@ -169,14 +203,3 @@ drone-simulation-matlab/
 - [ ] Phase 7 — Precision landing marker detection
 
 ---
-
-## 👤 Author
-
-**[Your Name]**
-[Your LinkedIn] | [Your Email]
-
----
-
-## 📌 Notes
-
-This project was built as an independent study simulation inspired by the MathWorks Minidrone Competition. It replicates competition-level autonomous drone algorithms in a fully simulated environment without requiring physical hardware or paid hardware support packages.
