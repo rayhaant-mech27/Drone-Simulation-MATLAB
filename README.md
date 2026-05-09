@@ -203,3 +203,11 @@ drone-simulation-matlab/
 - [ ] Phase 7 — Precision landing marker detection
 
 ---
+
+## Author
+
+RAYHAAN T 
+<br>
+Final Year Mechanical Engineering Student | Robotics Enthusiast  
+📍 Chennai, India  
+🔗 linkedin.com/in/rayhaan-t-742709290/
